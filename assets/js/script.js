@@ -30,8 +30,9 @@ $(document).ready(function () {
         menu.classList.toggle("hidden");
     });
 
-    const swiper = new Swiper('.hero-slide', {
+        const swiper = new Swiper('.hero-slide', {
         loop: true,
+        clickable: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

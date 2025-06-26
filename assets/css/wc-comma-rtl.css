@@ -1202,3 +1202,10 @@ a.remove.position-relative:hover .custom-tooltip:before {
 .image-hero img{
     height: 100%;
 }
+.hero-slide .image{
+    height: 25rem;
+}
+.hero-slide img{
+    height: 100%;
+    object-fit: cover;
+}
