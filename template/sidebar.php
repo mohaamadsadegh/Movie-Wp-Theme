@@ -14,7 +14,6 @@
             </div>
         </div>
 
-
         <!-- Genres Grid -->
         <div class="grid grid-cols-2 gap-3 text-sm genre-list">
             <button class="genre-item bg-bluet-700 text-white px-4 py-2 rounded-lg flex justify-between">
@@ -102,8 +101,7 @@
         if ($blog->have_posts()) : ?>
             <?php while ($blog->have_posts()) : $blog->the_post(); ?>
                 <div class="image relative w-full mb-2">
-                    <a href="<?php the_permalink();?>"><img class="rounded-[10px] w-full h-24 object-cover"
-                                                            src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title() ?>">
+                    <a href="<?php the_permalink();?>"><img class="rounded-[10px] w-full h-24 object-cover" src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title() ?>">
                         <div class="overlay text-start">
                             <h2 class="text-sm"><?php echo the_title() ?></h2>
                         </div>
@@ -118,7 +116,6 @@
     <div class="bg-bluet-600 p-4 rounded-xl text-white max-w-md mx-auto mt-4">
         <!-- Header -->
         <div class="flex justify-between items-center mb-[24px]">
-            <div>
                 <div>
                     <button class="tab-btn border-white text-gray-300 px-4 py-1 rounded-md"
                             data-tab="serial">
@@ -126,7 +123,6 @@
                     </button>
                     <button class="tab-btn text-black px-4 py-1 rounded-md" data-tab="film">فیلم
                     </button>
-                </div>
             </div>
         </div>
         <!-- slider -->
@@ -136,7 +132,6 @@
                     <?php $blog = new WP_Query(['post_type' => 'movie' , 'posts_per_page' => 4 ,]);
                     if ($blog->have_posts()) : ?>
                         <?php while ($blog->have_posts()) : $blog->the_post(); ?>
-                            <!-- Slide 1 -->
                             <div class="swiper-slide">
                                 <a href="<?php the_permalink();?>">
                                     <div class="text-center overflow-hidden shadow-md">
@@ -154,13 +149,10 @@
         </div>
     </div>
     <div class="genre-box bg-bluet-600 p-4 rounded-xl text-white max-w-md mx-auto mt-4">
-
         <!-- Header -->
         <div class="flex justify-between items-center mb-[24px]">
             <h3 class="title-sec">دوبله های فارسی</h3>
-
         </div>
-
         <!-- Genres Grid -->
         <div class="grid grid-cols-2 gap-3 text-sm genre-list">
 
@@ -178,6 +170,5 @@
             </button>
 
         </div>
-
     </div>
 </div>

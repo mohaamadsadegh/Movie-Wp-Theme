@@ -32,10 +32,10 @@ class Movie
             ] ,
             'public' => true ,
             'menu_icon' => 'dashicons-video-alt2' ,
-            'supports' => ['title' , 'editor' , 'thumbnail'] ,
+            'supports' => ['title' , 'editor' , 'thumbnail', 'comments'] ,
             'rewrite' => ['slug' => 'movies'] ,
             'show_in_rest' => true ,
-            'taxonomies' => array('category' , 'tags' , 'post_tag' , 'irani') ,
+            'taxonomies' => array('category' , 'tags' , 'post_tag' , 'irani' ) ,
         ]);
 
         // Series
@@ -50,9 +50,9 @@ class Movie
             'public' => true ,
             'has_archive' => true ,
             'menu_icon' => 'dashicons-video-alt2' ,
-            'supports' => ['title' , 'editor' , 'thumbnail'] ,
+            'supports' => ['title' , 'editor' , 'thumbnail'. 'comments'] ,
             'rewrite' => ['slug' => 'series'] ,
-            'taxonomies' => array('category' , 'tags' , 'post_tag') ,
+            'taxonomies' => array('category' , 'tags' , 'post_tag' ) ,
         ]);
 
         // Actor
@@ -67,9 +67,9 @@ class Movie
             'public' => true ,
             'has_archive' => true ,
             'menu_icon' => 'dashicons-admin-users' ,
-            'supports' => ['title' , 'editor' , 'thumbnail'] ,
+            'supports' => ['title' , 'editor' , 'thumbnail', 'comments'] ,
             'rewrite' => ['slug' => 'actors'] ,
-            'taxonomies' => array('category' , 'tags' , 'post_tag') ,
+            'taxonomies' => array('category' , 'tags' , 'post_tag' ) ,
         ]);
     }
 
@@ -145,7 +145,6 @@ class Movie
         ]);
 
     }
-
 
     public function maybe_insert_default_terms()
     {

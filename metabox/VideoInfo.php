@@ -35,7 +35,7 @@ class VideoInfo
             'imdb_id'       => get_post_meta($post->ID, '_video_imdb_id', true),
             'poster'        => get_post_meta($post->ID, '_movie_poster', true),
             'trailer'       => get_post_meta($post->ID, '_movie_trailer', true),
-            'download_links'=> get_post_meta($post->ID, '_video_download_links_by_quality', true),
+            'download_links'=> get_post_meta($post->ID, '_download_links_by_quality', true),
         ];
 
         wp_nonce_field('save_video_info_metabox', 'video_info_nonce');
@@ -151,7 +151,7 @@ class VideoInfo
                 ];
             }
         }
-        update_post_meta($post_id, '_video_download_links_by_quality', $cleaned);
+        update_post_meta($post_id, '_download_links_by_quality', $cleaned);
     }
 
     public function fetch_imdb_data()

@@ -502,6 +502,7 @@ video {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     padding: 20px;
     text-align: center;
+    border-radius: 0 0 10px 10px;
 }
 
 .overlay-poster {

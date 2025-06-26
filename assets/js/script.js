@@ -180,4 +180,62 @@ $(document).ready(function () {
         $(this).toggleClass('bg-yellow-500 text-black').toggleClass('bg-[#2c2b3b] text-black');
     });
 
+//     comments ajax
+    document.addEventListener('click', function (e) {
+        if (e.target.matches('.reply-btn')) {
+            const parentId = e.target.getAttribute('data-commentid');
+            const parentComment = e.target.closest('.bg-bluet-600');
+
+            const replyWrapper = document.getElementById('reply-wrapper');
+            const parentInput = document.getElementById('reply_parent_id');
+
+            parentInput.value = parentId;
+            parentComment.appendChild(replyWrapper);
+            replyWrapper.classList.remove('hidden');
+        }
+    });
+
+    const replyForm = document.getElementById('reply-form');
+    const replyMessage = document.getElementById('reply-message');
+    const commentList = document.querySelector('.space-y-4');
+
+    if (replyForm) {
+        replyForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(replyForm);
+            formData.append('action', 'ajax_comment');
+
+            fetch(CommentAjax.ajax_url, {
+                method: 'POST',
+                body: formData,
+                credentials: 'same-origin',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    replyMessage.innerHTML = '';
+                    if (data.success) {
+                        replyMessage.innerHTML = '<span class="text-green-500">پاسخ ثبت شد.</span>';
+                        replyForm.reset();
+
+                        const wrapper = document.createElement('div');
+                        wrapper.innerHTML = data.data.html;
+
+                        // نمایش پاسخ زیر مادر
+                        const parentComment = document.querySelector(`[data-commentid="${formData.get('comment_parent')}"]`).closest('.bg-bluet-600');
+                        parentComment.insertAdjacentElement('afterend', wrapper.firstElementChild);
+
+                        document.getElementById('reply-wrapper').classList.add('hidden');
+                    } else {
+                        data.data.messages.forEach(msg => {
+                            const error = document.createElement('div');
+                            error.className = 'text-red-500 text-sm';
+                            error.textContent = msg;
+                            replyMessage.appendChild(error);
+                        });
+                    }
+                });
+        });
+    }
+
 });

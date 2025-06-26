@@ -1196,3 +1196,9 @@ a.remove.position-relative:hover .custom-tooltip:before {
 .woocommerce-breadcrumb a{
     color:var(--text-color);
 }
+.image-hero{
+    height: 186px;
+}
+.image-hero img{
+    height: 100%;
+}

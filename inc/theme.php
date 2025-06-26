@@ -4,6 +4,7 @@
 namespace inc;
 
 use core\ajax;
+use core\CommentHandler;
 use core\Setup;
 use core\UserData;
 use metabox\seriesmeta;
@@ -23,9 +24,10 @@ class Theme
         new seriesmeta;
 //         ajax
         new ajax();
-
 //        user data
         new UserData();
+//        comments
+        new CommentHandler();
     }
 
 }
