@@ -66,8 +66,10 @@
                                         تریلر
                                         فیلم
                                     </button>
-                                    <button class="bg-bluet-700 px-4 py-2 text-sm rounded hover:bg-blue-700">دوبله
+                                    <?php if(empty('')){ ?>
+                                    <button class="bg-bluet-700 px-4 py-2 text-sm rounded hover:bg-blue-700"><?php Renderer::video_language(get_the_ID());?>
                                     </button>
+                                   <?php } ?>
                                     <button class="bg-bluet-700 px-4 py-2 text-sm rounded hover:bg-blue-700">زیرنویس
                                     </button>
 

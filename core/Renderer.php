@@ -62,4 +62,22 @@ class Renderer
         $meta[''] = $genres;
         return '  <p class="text-gray-400 mt-1 text-xs text-right"> ' . esc_html($genres) . '</p>';
     }
+
+    public static function video_language($post_id)
+    {
+        $get_post = get_post_meta(get_the_ID(), '_video_language', true);
+        $list = [
+            'fa' => 'فارسی',
+            'en' => 'انگلیسی',
+            'dub-fa' => 'دوبله فارسی',
+            'sub-fa' => 'زیرنویس چسبیده',
+            'multi' => 'چندزبانه'
+        ];
+
+        if (!empty($get_post) && isset($list[$get_post])) {
+            echo esc_html($list[$get_post]);
+        } else {
+            echo 'زبان مشخص نیست';
+        }
+    }
 }
