@@ -3,6 +3,7 @@
 
 namespace inc;
 
+use metabox\actormeta;
 use core\ajax;
 use core\CommentHandler;
 use core\Setup;
@@ -22,6 +23,7 @@ class Theme
 //        meta box
         new VideoInfo();
         new seriesmeta;
+        new actormeta();
 //         ajax
         new ajax();
 //        user data

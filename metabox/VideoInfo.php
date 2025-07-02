@@ -36,6 +36,7 @@ class VideoInfo
             'poster'        => get_post_meta($post->ID, '_movie_poster', true),
             'trailer'       => get_post_meta($post->ID, '_movie_trailer', true),
             'download_links'=> get_post_meta($post->ID, '_download_links_by_quality', true),
+            ''
         ];
 
         wp_nonce_field('save_video_info_metabox', 'video_info_nonce');
@@ -44,10 +45,11 @@ class VideoInfo
         ?>
         <div class="video-tabs">
             <ul class="tabs">
-                <li class="active"  data-tab="imdb">اطلاعات IMDb</li>
+                <li class="active" data-tab="imdb">اطلاعات IMDb</li>
                 <li data-tab="general">اطلاعات عمومی</li>
                 <li data-tab="links">لینک‌های دانلود</li>
                 <li data-tab="poster">پوستر و تریلر</li>
+                <li data-tab="fomentation">عوامل سازنده</li>
             </ul>
 
             <div class="tab-content" id="tab-general">
@@ -116,6 +118,39 @@ class VideoInfo
                 <input type="text" name="video_imdb_id" id="video_imdb_id" value="<?php echo esc_attr($meta['imdb_id']); ?>" placeholder="مثلاً tt1234567" />
                 <button type="button" id="fetch-by-id" class="button">دریافت با IMDb ID</button>
             </div>
+
+            <div class="tab-content" id="tab-fomentation">
+            <?php
+        $selected_actors = get_post_meta($post->ID, '_movie_actors', true) ?: [];
+        $selected_director = get_post_meta($post->ID, '_movie_director', true);
+
+        $persons = get_posts([
+            'post_type' => 'actor',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+        ]);
+        ?>
+
+        <label><strong>بازیگران (قابل انتخاب چندتایی):</strong></label>
+        <select name="movie_actors[]" multiple style="width:100%;height:140px;">
+            <?php foreach ($persons as $person): ?>
+                <option value="<?= esc_attr($person->ID); ?>" <?= in_array($person->ID, (array) $selected_actors) ? 'selected' : ''; ?>>
+                    <?= esc_html($person->post_title); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <br><br>
+        <label><strong>کارگردان:</strong></label>
+        <select name="movie_director" style="width:100%;">
+            <option value="">-- انتخاب کنید --</option>
+            <?php foreach ($persons as $person): ?>
+                <option value="<?= esc_attr($person->ID); ?>" <?= selected($selected_director, $person->ID, false); ?>>
+                    <?= esc_html($person->post_title); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
         </div>
         <?php
     }
@@ -139,8 +174,20 @@ class VideoInfo
         foreach ($fields as $key => $value) {
             update_post_meta($post_id, $key, $value);
         }
+        // بازیگران
+         if (isset($_POST['movie_actors'])) {
+        $actors = array_map('intval', $_POST['movie_actors']);
+        update_post_meta($post_id, '_movie_actors', $actors);
+        } else {
+        delete_post_meta($post_id, '_movie_actors');
+        }
 
-        // دانلود لینک‌ها
+    // کارگردان
+        if (isset($_POST['movie_director'])) {
+        $director = intval($_POST['movie_director']);
+        update_post_meta($post_id, '_movie_director', $director);
+        }
+            // دانلود لینک‌ها
         $submitted_links = $_POST['video_download_links'] ?? [];
         $cleaned = [];
         foreach ($submitted_links as $item) {

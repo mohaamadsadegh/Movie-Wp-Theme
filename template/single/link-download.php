@@ -40,11 +40,18 @@ $download_links = get_post_meta(get_the_ID(), '_download_links_by_quality');
             <!-- قسمت 01 -->
             <div class="bg-bluet-600 p-4 rounded-lg">
                 <div class="flex justify-between items-center flex-wrap gap-2">
+                    <?php if (!empty($download_links)){ ?>
                     <span>قسمت 01 | کیفیت‌ها:</span>
+                    <?php } ?>
                     <div class="flex gap-2 flex-wrap">
-                        <?php foreach ($download_links[0] as  $download_link){ ?>
+                        <?php
+                        if (!empty($download_links)){
+                        foreach ($download_links[0] as  $download_link){ ?>
                         <a href="<?=$download_link['url'] ?>" class="bg-green-500 px-3 py-1 rounded text-sm hover:bg-green-400"><?= $download_link['quality']?></a>
-                        <?php } ?>
+                        <?php }
+                        }else{
+                            echo "متاسفانه لینکی برای دانلود وجود ندارد";
+                        } ?>
                     </div>
                 </div>
             </div>

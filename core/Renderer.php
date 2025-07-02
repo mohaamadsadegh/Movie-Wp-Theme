@@ -80,4 +80,5 @@ class Renderer
             echo 'زبان مشخص نیست';
         }
     }
+
 }
