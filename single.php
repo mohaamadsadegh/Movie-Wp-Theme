@@ -99,4 +99,5 @@ while (have_posts()) : the_post();
 endwhile;
 // slider section
 get_template_part('template/irani-series');
+
 get_footer();

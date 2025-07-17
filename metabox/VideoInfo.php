@@ -131,9 +131,10 @@ class VideoInfo
             'order' => 'ASC',
         ]);
         ?>
-
-        <label><strong>بازیگران (قابل انتخاب چندتایی):</strong></label>
+        <p>از طربق پست تایپ بازیگران می توانید بازیگران را اضافه یا ویرایش کنید</p>
+        <label style="margin-bottom: 10px;display: block"><strong>بازیگران (قابل انتخاب چندتایی):</strong></label>
         <select name="movie_actors[]" multiple style="width:100%;height:140px;">
+        <option value="">-- انتخاب کنید --</option>
             <?php foreach ($persons as $person): ?>
                 <option value="<?= esc_attr($person->ID); ?>" <?= in_array($person->ID, (array) $selected_actors) ? 'selected' : ''; ?>>
                     <?= esc_html($person->post_title); ?>
