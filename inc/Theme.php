@@ -38,6 +38,8 @@ class Theme
         add_action('after_setup_theme', function () {
             new login_form();
         });
+//        config file
+        new config_file();
     }
 
 }
