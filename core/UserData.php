@@ -20,10 +20,12 @@ class UserData
     }
     public static function user_login()
     {
+
+
         $login = is_user_logged_in();
         $re =  home_url('my-account');
         if (!$login) {
-            echo '<a href="'.$re.'" class="w-full bg-yellow-400 text-black text-sm  py-2 px-5 rounded hover:bg-yellow-300">ورود</a>';
+            echo do_shortcode('[custom_login_form]');
         }else{
            self::get_user_login();
         }

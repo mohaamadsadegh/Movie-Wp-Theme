@@ -11,6 +11,8 @@ use core\UserData;
 use metabox\seriesmeta;
 use metabox\VideoInfo;
 use posttype\Movie;
+use user_panel\login_form;
+use user_panel\user_dashboard;
 
 class Theme
 {
@@ -30,6 +32,12 @@ class Theme
         new UserData();
 //        comments
         new CommentHandler();
+//        user dashboard
+        new user_dashboard();
+//        login
+        add_action('after_setup_theme', function () {
+            new login_form();
+        });
     }
 
 }
