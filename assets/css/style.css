@@ -1,0 +1,199 @@
+/*font family dana*/
+
+@font-face {
+    font-family: "Dana";
+
+    src: local("Dana"), url("./assets/fonts/dana/dana-regular.woff2") format("woff2");
+
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dana Medium";
+
+    src: local("Dana"), url("./assets/fonts/dana/dana-medium.woff2") format("woff2");
+
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dana bold";
+    src: local("Dana"), url("./assets/fonts/dana/dana-bold.woff2") format("woff2");
+    font-display: swap;
+}
+
+/*font family Emkan*/
+
+@font-face {
+    font-family: "Emkan";
+    src: local("Emkan"), url("./assets/fonts/Emkan/Emkan-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Emkan Medium";
+    src: local("Emkan"), url("./assets/fonts/Emkan/Emkan-Bold.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Emkan bold";
+    src: local("Emkan"), url("./assets/fonts/Emkan/Emkan-Black.woff2") format("woff2");
+    font-display: swap;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.overlay-poster {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to top, #15141C, rgba(21, 20, 28, 0.51));
+    padding: 0;
+    text-align: center;
+}
+
+.overlay h2 {
+    margin: 0;
+}
+
+.tags {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.imdb {
+    background: #f5c518;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.cart-slider-next,.cart-slider-prev{
+    margin-top: 0 !important;
+}
+
+.title-sec:after{
+    content: "";
+    width: 32px;
+    height: 3px;
+    margin-top: 3px;
+    border-radius: 10px;
+    display: block;
+    background: #f5c518;
+}
+
+.new-move{
+    background-image: url("./assets/image/bgsec.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-image: none !important;
+    background: #2A2933;
+    width: 30px !important;
+    height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 5px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 12px !important;
+    color: #696875 !important;
+}
+
+.swiper-vertical>.swiper-wrapper {
+    flex-direction: column
+}
+
+.posters-slider {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.posters-slider .swiper {
+    overflow: visible;
+    width: var(--posters-slider-width);
+    height: var(--posters-slider-height)
+}
+
+.posters-slider .swiper-slide {
+    border-radius: 10px;
+    justify-content: center;
+    display:flex;
+}
+
+.posters-slider .swiper-slide-shadow {
+    background: var(--posters-slider-shadow-bg-color)
+}
+
+.posters-slider img {
+    /*width: 100%;*/
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.swiper-creative .swiper-slide {
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition-property:transform,opacity,height;
+}
+
+.title-box:after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    display: block;
+    background: #2A2933;
+}
+
+.genre-item{
+    width: 155px;
+}
+
+.topMoviesSwiper > .swiper-wrapper {
+    flex-direction: row !important;
+}
+
+.topMoviesSwiper .swiper-slide {
+    margin-top: 10px !important;
+}
+
+@media screen and  (min-width: 1280px) {
+    html.dark .products {
+        background-image: url("../image/products.png");
+    }
+
+    .products {
+        background: linear-gradient(rgb(243, 244, 246, 0.65), rgb(243, 244, 246, 0.65)), url("../image/products.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}

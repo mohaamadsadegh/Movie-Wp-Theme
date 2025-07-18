@@ -1,6 +1,6 @@
 <?php
 
-namespace posttype;
+namespace inc\posttype;
 
 class Movie
 {

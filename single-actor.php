@@ -7,7 +7,7 @@ while (have_posts()) : the_post();
     $trailer_url = get_post_meta($id , '_movie_trailer' , true);
     $poster = get_post_meta($id , '_movie_poster' , true);
     $poster = $poster ?: get_the_post_thumbnail_url();
-    ?>
+?>
     <!---->
     <section class="">
         <div class="h-[482px] relative hidden md:block"

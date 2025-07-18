@@ -1,5 +1,5 @@
 <?php
-namespace user_panel;
+namespace inc\user_panel;
 
 class login_form
 {
@@ -34,17 +34,17 @@ class login_form
         <button onclick="toggleModal('loginModal', true)" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">ورود / ثبت‌نام</button>
 
         <!-- مودال ورود -->
-        <div id="loginModal" class="modal hidden fixed inset-0 bg-black/80 items-center justify-center z-50">
-            <div class="bg-[#2c2b3b] p-6 rounded-lg max-w-md w-full relative shadow-lg">
+        <div id="loginModal" class="modal hidden fixed inset-0 bg-black/80 items-center justify-center z-50 ">
+            <div class="bg-[#2c2b3b] p-6 rounded-lg max-w-md w-full relative shadow-lg border-b-yellow-yellow900 border-b">
                 <button onclick="toggleModal('loginModal', false)" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
                 <h2 class="font-bold text-center mb-6">ورود به حساب کاربری</h2>
 
                 <form method="post" id="loginForm" class="space-y-4">
                     <input type="hidden" name="custom_login_nonce" value="<?php echo wp_create_nonce('custom_login'); ?>">
 
-                    <div class="flex space-x-4 mb-4 justify-center">
-                        <label><input type="radio" name="login_method" value="userpass" checked> ایمیل/نام کاربری و رمز عبور</label>
-                        <label><input type="radio" name="login_method" value="phonecode"> شماره موبایل و کد پیامکی</label>
+                    <div class="flex mb-4 justify-center">
+                        <label class="p-2 rounded-[10px] m-0"><input type="radio"  name="login_method" value="userpass" checked>ورود با ایمیل/نام کاربری</label>
+                        <label class="p-2 rounded-[10px] m-0"><input type="radio"  name="login_method" value="phonecode">ورود شماره موبایل</label>
                     </div>
 
                     <div id="userpass_fields">
@@ -129,15 +129,17 @@ class login_form
                 // تغییر نمایش فیلدها بر اساس انتخاب روش ورود
                 $('input[name="login_method"]').change(function () {
                     if ($(this).val() === 'phonecode') {
-                        $('#userpass_fields').hide();
-                        $('#phonecode_fields').show();
+                        $(this).removeClass('active');
+                        $('#userpass_fields').hide(500);
+                        $('#phonecode_fields').show(500);
                         $('#loginForm input[name="username_or_email"]').prop('required', false);
                         $('#loginForm input[name="password"]').prop('required', false);
                         $('#loginForm input[name="login_phone"]').prop('required', true);
                         $('#loginForm input[name="login_sms_code"]').prop('required', true);
                     } else {
-                        $('#userpass_fields').show();
-                        $('#phonecode_fields').hide();
+                        $(this).addClass('active');
+                        $('#userpass_fields').show(500);
+                        $('#phonecode_fields').hide(500);
                         $('#loginForm input[name="username_or_email"]').prop('required', true);
                         $('#loginForm input[name="password"]').prop('required', true);
                         $('#loginForm input[name="login_phone"]').prop('required', false);

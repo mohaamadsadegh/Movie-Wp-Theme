@@ -1209,3 +1209,9 @@ a.remove.position-relative:hover .custom-tooltip:before {
     height: 100%;
     object-fit: cover;
 }
+#loginModal input[type="radio" i] {
+    display: none;
+}
+#loginModal input[type="radio" i] label.active{
+background: rgb(28, 26, 26);
+}

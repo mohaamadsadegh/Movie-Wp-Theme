@@ -1,5 +1,5 @@
 <?php
-namespace user_panel;
+namespace inc\user_panel;
 
 
 class user_dashboard

@@ -1,5 +1,5 @@
 <?php
-namespace metabox;
+namespace inc\metabox;
 
 class seriesmeta {
     public function __construct() {

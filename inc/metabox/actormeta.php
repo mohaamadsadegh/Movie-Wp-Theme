@@ -1,5 +1,5 @@
 <?php
-namespace metabox;
+namespace inc\metabox;
 class actormeta{
     public function __construct()
     {

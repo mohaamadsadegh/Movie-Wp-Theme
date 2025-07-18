@@ -3,16 +3,16 @@
 
 namespace inc;
 
-use metabox\actormeta;
 use core\ajax;
 use core\CommentHandler;
 use core\Setup;
 use core\UserData;
-use metabox\seriesmeta;
-use metabox\VideoInfo;
-use posttype\Movie;
-use user_panel\login_form;
-use user_panel\user_dashboard;
+use inc\metabox\actormeta;
+use inc\metabox\seriesmeta;
+use inc\metabox\VideoInfo;
+use inc\posttype\Movie;
+use inc\user_panel\login_form;
+use inc\user_panel\user_dashboard;
 
 class Theme
 {
