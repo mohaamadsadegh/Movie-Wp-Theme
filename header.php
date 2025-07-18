@@ -13,9 +13,18 @@ $options = get_option('moves_options'); ?>
 </head>
 
 <body class="bg-bgc-200 text-white" <?php body_class(); ?>>
+<!--preloder-->
+<div id="site-preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-black">
+    <div class="text-white text-sm animate-pulse"><?= $options['text_preloder']; ?> </div>
+</div>
 
 <!-- Navbar -->
 <nav class="bg-bluet-600 shadow-md border-b-yellow-yellow900 border-b-2">
+<!--    site notice-->
+    <div id="site_notice" class="flex items-center justify-center bg-yellow-yellow900 py-2">
+        <div class="text-black text-sm animate-pulse"><?= $options['site_notice']; ?> </div>
+    </div>
+
     <div class="container mx-auto px-4 py-4 flex items-center justify-between ">
         <!-- Right: Logo -->
         <a href="<?php echo home_url(); ?>"

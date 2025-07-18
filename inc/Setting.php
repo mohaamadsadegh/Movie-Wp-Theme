@@ -32,6 +32,11 @@
                     <th>فعال‌سازی حالت تاریک</th>
                     <td><input type="checkbox" name="<?= $name ?>[dark_mode]" value="1" <?php checked($options['dark_mode'] ?? '', 1); ?> /></td>
                 </tr>
+
+                <tr>
+                    <th>متن هنگام بارگزاری سایت</th>
+                    <td><input type="text" name="<?= $name ?>[text_preloder]" value="<?= esc_attr($options['text_preloder'] ?? '') ?>" class="regular-text" /></td>
+                </tr>
             </table>
         </div>
 

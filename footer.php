@@ -9,25 +9,7 @@
     <div class="bg-bluet-600 p-5">
     </div>
 </footer>
-<!-- JS for toggle -->
-<script src="<?php echo get_template_directory_uri() . '/assets/js/jquery.js'?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/assets/js/swiper.js'?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/assets/js/script.js'?>"></script>
+
 <?php wp_footer(); ?>
-<div id="site-preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-black">
-    <div class="text-white text-sm animate-pulse">در حال بارگذاری...</div>
-</div>
-<style>
-    #site-preloader {
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        background: #000;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
 </body>
 </html>
