@@ -1,10 +1,7 @@
 <?php
 
-namespace core;
-
-use WP_Query;
-
-class ajax
+namespace inc\Ajax;
+class ajaxFilter
 {
 
     public function __construct()

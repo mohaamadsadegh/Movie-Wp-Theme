@@ -3,8 +3,10 @@
 
 namespace inc;
 
-use core\ajax;
-use core\CommentHandler;
+
+use inc\Ajax\ajaxFilter;
+use inc\Ajax\CommentHandler;
+use inc\Ajax\AjaxGenreTabs;
 use core\Setup;
 use core\UserData;
 use inc\metabox\actormeta;
@@ -27,13 +29,15 @@ class Theme
         new seriesmeta;
         new actormeta();
 //         ajax
-        new ajax();
+        new ajaxFilter();
 //        user data
         new UserData();
 //        comments
-        new CommentHandler();
+        new CommentHandler;
 //        user dashboard
         new user_dashboard();
+//       ajax genre tabs
+        new ajaxGenreTabs();
 //        login
         add_action('after_setup_theme', function () {
             new login_form();

@@ -1,6 +1,6 @@
 <?php
 
-namespace core;
+namespace inc\Ajax;
 
 class CommentHandler {
     public function __construct() {
@@ -64,7 +64,7 @@ class CommentHandler {
                     <?php echo get_avatar($comment, 40, '', '', ['class' => 'rounded-full']); ?>
                     <span class="text-sm font-bold"><?php echo get_comment_author($comment); ?></span>
                 </div>
-                <span class="text-xs text-gray-400"><?php echo jdate('Y/m/d', strtotime($comment->comment_date)); ?></span>
+                <span class="text-xs text-gray-400"><?php echo \core\jdate('Y/m/d' , strtotime($comment->comment_date)); ?></span>
             </div>
             <p class="text-sm text-gray-300"><?php echo esc_html($comment->comment_content); ?></p>
         </div>
