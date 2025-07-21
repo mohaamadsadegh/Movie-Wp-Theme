@@ -31,7 +31,12 @@ class login_form
         }
 
         ob_start(); ?>
-        <button onclick="toggleModal('loginModal', true)" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">ورود / ثبت‌نام</button>
+        <button onclick="toggleModal('loginModal', true)" class="px-6 text-sm ring-1 ring-slate-600  py-2 bg-bluet-700 text-white rounded hover:bg-bluet-600 transition relative">ورود / ثبت‌نام
+            <span class="absolute top-0 right-0 -mt-1 -mr-1 flex h-2.5 w-2.5">
+                <span class="absolute inline-flex animate-ping rounded-full bg-slate-600 opacity-75 h-full w-full"></span>
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-slate-600"></span>
+            </span>
+        </button>
 
         <!-- مودال ورود -->
         <div id="loginModal" class="modal hidden fixed inset-0 bg-black/80 items-center justify-center z-50 ">
