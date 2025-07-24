@@ -54,7 +54,9 @@ get_template_part('template/filter');
                                              class="w-full h-[285px] rounded-[10px] object-cover"/>
                                         <div class="p-3 space-y-1">
                                             <h3 class="text-sm font-semibold line-clamp-1"><?php the_title() ?></h3>
-                                            <?php echo  MovieHelper::renderBroadcastInfo(get_the_ID()); ?>
+                                            <?php if (get_post_type() === 'series')
+                                            { echo MovieHelper::renderBroadcastInfo(get_the_ID());}
+                                            ?>
                                     </div>
                                 </div>
                                 </div>

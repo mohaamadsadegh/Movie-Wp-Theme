@@ -1,22 +1,22 @@
 <?php
 // layout.php - dashboard tabs structure
 ?>
-<div class="max-w-5xl mx-auto mt-10 p-4 bg-white shadow-md rounded-xl">
+<div class="container mx-auto mt-10 p-4  shadow-md rounded-xl">
     <div class="flex flex-col md:flex-row gap-4">
         <!-- Sidebar -->
-        <aside class="md:w-1/4 border-r">
+        <aside class="md:w-1/4 bg-bluet-600 p-3 rounded-[10px]">
             <ul class="space-y-2">
                 <li>
-                    <button class="tab-btn w-full text-right" data-tab="profile">👤 پروفایل</button>
+                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="profile">👤 پروفایل</button>
                 </li>
                 <li>
-                    <button class="tab-btn w-full text-right" data-tab="password">🔒 تغییر رمز</button>
+                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="password">🔒 تغییر رمز</button>
                 </li>
                 <li>
-                    <button class="tab-btn w-full text-right" data-tab="avatar">🖼️ آواتار</button>
+                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="avatar">🖼️ آواتار</button>
                 </li>
                 <li>
-                    <button class="tab-btn w-full text-right" data-tab="orders">🧾 سفارشات</button>
+                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="orders">🧾 سفارشات</button>
                 </li>
 
                 <li><a href="<?php echo wp_logout_url(home_url()); ?>" class="text-red-600">🚪 خروج</a></li>
@@ -42,42 +42,42 @@
     });
 
     // AJAX: Change Password
-    const pwdForm = document.getElementById("change-password-form");
-    if (pwdForm) {
-        pwdForm.addEventListener("submit", e => {
-            e.preventDefault();
-            const data = new FormData(pwdForm);
-            data.append("action", "change_password");
-            data.append("nonce", userPanelData.nonce);
-
-            fetch(userPanelData.ajax_url, {method: "POST", body: data})
-                .then(res => res.json())
-                .then(res => {
-                    pwdForm.querySelector(".msg").innerText = res.data.message;
-                });
-        });
-    }
+    // const pwdForm = document.getElementById("change-password-form");
+    // if (pwdForm) {
+    //     pwdForm.addEventListener("submit", e => {
+    //         e.preventDefault();
+    //         const data = new FormData(pwdForm);
+    //         data.append("action", "change_password");
+    //         data.append("nonce", user_panel_ajax_data.nonce);
+    //         console.log(user_panel_ajax_data)
+    //         fetch(user_panel_ajax_data.ajax_url, {method: "POST", body: data})
+    //             .then(res => res.json())
+    //             .then(res => {
+    //                 pwdForm.querySelector(".msg").innerText = res.data.message;
+    //             });
+    //     });
+    // }
 
     // AJAX: Upload Avatar
-    const avatarForm = document.getElementById("avatar-form");
-    if (avatarForm) {
-        avatarForm.addEventListener("submit", e => {
-            e.preventDefault();
-            const data = new FormData(avatarForm);
-            data.append("action", "upload_avatar");
-            data.append("nonce", userPanelData.nonce);
-
-            fetch(userPanelData.ajax_url, {method: "POST", body: data})
-                .then(res => res.json())
-                .then(res => {
-                    if (res.success) {
-                        document.getElementById("avatar-preview").src = res.data.url;
-                        document.getElementById("avatar-preview").hidden = false;
-                    } else {
-                        avatarForm.querySelector(".msg").innerText = res.data.message;
-                    }
-                });
-        });
-    }
+    // const avatarForm = document.getElementById("avatar-form");
+    // if (avatarForm) {
+    //     avatarForm.addEventListener("submit", e => {
+    //         e.preventDefault();
+    //         const data = new FormData(avatarForm);
+    //         data.append("action", "upload_avatar");
+    //         data.append("nonce", user_panel_ajax_data.nonce);
+    //
+    //         fetch(user_panel_ajax_data.ajax_url, {method: "POST", body: data})
+    //             .then(res => res.json())
+    //             .then(res => {
+    //                 if (res.success) {
+    //                     document.getElementById("avatar-preview").src = res.data.url;
+    //                     document.getElementById("avatar-preview").hidden = false;
+    //                 } else {
+    //                     avatarForm.querySelector(".msg").innerText = res.data.message;
+    //                 }
+    //             });
+    //     });
+    // }
 </script>
 

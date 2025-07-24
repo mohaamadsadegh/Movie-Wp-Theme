@@ -61,12 +61,15 @@
                 جستجوی پیشرفته
             </button>
 
-            <input type="hidden" name="action" value="movie-filter-form">
+            <input type="hidden" name="action" value="filter_movies">
         </div>
     </form>
 
     <div id="movie-results" class="mt-6">
         <!-- نتایج AJAX اینجا جایگزین می‌شود -->
+        <div id="ajax-loader" class="hidden text-center text-yellow-400 font-semibold my-4">
+            لطفاً منتظر بمانید...
+        </div>
     </div>
     <img alt="" class="my-4" src="<?php echo IMG_URL . 'Line.svg' ?>">
 </section>

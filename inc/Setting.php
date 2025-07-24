@@ -37,6 +37,18 @@
                     <th>متن هنگام بارگزاری سایت</th>
                     <td><input type="text" name="<?= $name ?>[text_preloder]" value="<?= esc_attr($options['text_preloder'] ?? '') ?>" class="regular-text" /></td>
                 </tr>
+
+                <tr>
+                    <th>متن صفحه 404 سایت</th>
+                    <td><input type="text" name="<?= $name ?>[text_404]" value="<?= esc_attr($options['text_404'] ?? '') ?>" class="regular-text" /></td>
+                </tr>
+                <tr>
+                    <th>متن دکمه 404 سایت</th>
+                    <td><input type="text" name="<?= $name ?>[text_404_btn]" value="<?= esc_attr($options['text_404_btn'] ?? '') ?>" class="regular-text" /></td>
+
+                    <th>لینک دکمه 404 سایت(درصورت خالی بودن به صفحه اصلی رجوع داده می شود.)</th>
+                    <td><input type="url" name="<?= $name ?>[text_404_btn_link]" value="<?= esc_attr($options['text_404_btn_link'] ?? home_url()) ?>" class="regular-text" /></td>
+                </tr>
             </table>
         </div>
 
@@ -341,6 +353,17 @@
             </table>
         </div>
 
+        <!-- footer -->
+        <div id="footer" class="tab-content">
+            <table class="form-table">
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+        </div>
         <?php submit_button(); ?>
     </form>
 </div>

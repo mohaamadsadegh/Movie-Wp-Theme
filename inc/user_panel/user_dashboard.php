@@ -7,14 +7,13 @@ class user_dashboard
     public function __construct()
     {
         add_shortcode('user_dashboard' , [$this , 'dashboard_shortcode']);
-        add_action('wp_enqueue_scripts' , [$this , 'enqueue_assets']);
+//        add_action('wp_enqueue_scripts' , [$this , 'enqueue_assets']);
         add_action('wp_ajax_change_password' , [$this , 'change_password']);
         add_action('wp_ajax_upload_avatar' , [$this , 'upload_avatar']);
     }
 
     public function enqueue_assets()
     {
-        wp_enqueue_script('user-panel-js' , get_template_directory_uri() . '/user-panel/assets/user-panel.js' , [] , false , true);
         wp_localize_script('user-panel-js' , 'userPanelData' , [
             'ajax_url' => admin_url('admin-ajax.php') ,
             'nonce' => wp_create_nonce('user_panel_nonce')

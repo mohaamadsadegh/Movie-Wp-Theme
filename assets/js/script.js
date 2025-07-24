@@ -4,24 +4,24 @@ $(document).ready(function () {
         document.getElementById('site-preloader').style.display = 'none';
     });
     // ajax filter
-    $('form#movie-filter-form').on('submit', function(e) {
-        e.preventDefault();
-
-        const formData = {
-            action: 'filter_movies',
-            nonce: movie_filter_ajax.nonce,
-            type: $('#type').val(),
-            genre: $('#genre').val(),
-            year_from: $('#year_from').val(),
-            year_to: $('#year_to').val(),
-            rating: $('#rating').val(),
-            order: $('#order').val()
-        };
-
-        $.post(movie_filter_ajax.ajax_url, formData, function(response) {
-            $('#movie-results').html(response);
-        });
-    });
+    // $('form#movie-filter-form').on('submit', function(e) {
+    //     e.preventDefault();
+    //
+    //     const formData = {
+    //         action: 'filter_movies',
+    //         nonce: movie_filter_ajax.nonce,
+    //         type: $('#type').val(),
+    //         genre: $('#genre').val(),
+    //         year_from: $('#year_from').val(),
+    //         year_to: $('#year_to').val(),
+    //         rating: $('#rating').val(),
+    //         order: $('#order').val()
+    //     };
+    //
+    //     $.post(movie_filter_ajax.ajax_url, formData, function(response) {
+    //         $('#movie-results').html(response);
+    //     });
+    // });
 
     const toggleBtn = document.getElementById("menu-toggle");
     const menu = document.getElementById("mobile-menu");
@@ -37,6 +37,28 @@ $(document).ready(function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+    });
+    const cart_slider_ajax = new Swiper(".cart-slider-ajax", {
+        slidesPerView: 6,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".cart-slider-next",
+            prevEl: ".cart-slider-prev"
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1.9,
+                spaceBetween: 20
+            },
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            640: {
+                slidesPerView: 6,
+                spaceBetween: 10,
+            }
+        }
     });
     const cart_slider = new Swiper(".cart-slider", {
         slidesPerView: 6,
@@ -141,16 +163,20 @@ $(document).ready(function () {
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
 // حذف active از بقیه
-            tabs.forEach(t => t.classList.remove("bg-white", "text-black"));
+            tabs.forEach(t => t.classList.remove("bg-bluet-700", "text-black"));
             contents.forEach(c => c.classList.add("hidden"));
 
 // فعال کردن انتخاب شده
-            tab.classList.add("bg-white", "text-black");
+            tab.classList.add("bg-bluet-700", "text-black");
             const selected = tab.getAttribute("data-tab");
             document.querySelector(`[data-content="${selected}"]`).classList.remove("hidden");
         });
     });
-
+// scroll to top
+    $(".top-btn").click(function () {
+        $("html, body").animate({scrollTop: 0}, "slow");
+        return false;
+    });
 // فعال‌سازی اولیه اولین تب
     tabs[0].click();
 
@@ -180,6 +206,18 @@ $(document).ready(function () {
     $('.genre-item').click(function () {
         $(this).toggleClass('bg-yellow-500 text-black').toggleClass('bg-[#2c2b3b] text-black');
     });
+
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".tab-content").forEach(c => c.classList.add("hidden"));
+            document.querySelector(`#tab-${btn.dataset.tab}`).classList.remove("hidden");
+        });
+    });
+
+
+
+
+
 
 //     comments ajax
     document.addEventListener('click', function (e) {

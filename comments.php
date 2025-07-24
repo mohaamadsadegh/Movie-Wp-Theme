@@ -59,7 +59,7 @@
                     'avatar_size' => 40,
                     'callback' => function ($comment, $args, $depth) {
                         ?>
-                        <div class="bg-bluet-600 p-4 rounded-lg">
+                        <div class="mt-3 bg-bluet-600 p-4 rounded-lg">
                             <div class="flex items-center justify-between mb-2">
                                 <div class="flex items-center gap-2">
                                     <?php echo get_avatar($comment, 40, '', '', ['class' => 'rounded-full']); ?>
@@ -83,7 +83,7 @@
         </div>
 
         <!-- دکمه مشاهده بیشتر (اختیاری) -->
-        <div class="flex items-center justify-center" style="background: url('<?php echo IMG_URL . 'linet.png'?>') no-repeat center;">
+        <div class="mt-3 flex items-center justify-center" style="background: url('<?php echo IMG_URL . 'linet.png'?>') no-repeat center;">
             <a href="#" class="border-2 rounded-[7px] px-[8px] py-[6px] border-bluet-700 text-bluet-400">مشاهده بیشتر</a>
         </div>
 

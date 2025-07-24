@@ -7,10 +7,52 @@
                class="text-2xl font-bold text-yellow-yellow900 text-center"><?= $options['title_site'] ?></a>
         </div>
     </div>
+
     <div class="bg-bluet-600 p-5">
+        <div class="container px-0">
+        <div class="flex justify-between">
+        <div class="flex flex-col">
+            <h3 class="title-sec">فیلم های جدید</h3>
+            <ul class="mt-3">
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+
+            </ul>
+        </div>
+
+            <div class="flex flex-col">
+            <h3 class="title-sec">سریال های جدید</h3>
+            <ul class="mt-3">
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <h3 class="title-sec">فیلم های جدید</h3>
+            <ul class="mt-3">
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+                <li class="mb-2 before:ring before:bg-slate-600 before:ring-slate-600 before:inline-block before:h-[3px] before:w-[3px] before:rounded-full before:ml-2"><a href="#">انیمیشن</a></li>
+
+            </ul>
+        </div>
+        <div class="flex flex-col">
+                <h3 class="title-sec">شبکه های اجتماعی</h3>
+            </div>
+        </div>
+        </div>
     </div>
 
-    <div class="w-8 fixed bottom-2 right-2  flex size-5 animate-bounce items-center justify-center rounded-full bg-bluet-600 p-2 ring-1 ring-gray-900/5 dark:bg-white/5 dark:ring-white/20">
+    <div class="top-btn w-8 fixed bottom-2 right-2 flex size-5 animate-bounce items-center justify-center rounded-full bg-bluet-600 p-2 ring-1 ring-slate-600/30 dark:bg-white/5 dark:ring-white/20">
         <svg class="size-6 rotate-180 text-violet-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
              viewBox="0 0 24 24" stroke="currentColor">
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>

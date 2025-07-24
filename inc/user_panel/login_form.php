@@ -9,19 +9,10 @@ class login_form
         add_action('init', [$this, 'handle_login']);
         add_action('init', [$this, 'handle_register']);
         add_action('init', [$this, 'handle_password_reset']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
         add_action('wp_ajax_send_sms_code', [$this, 'ajax_send_sms_code']);
         add_action('wp_ajax_nopriv_send_sms_code', [$this, 'ajax_send_sms_code']);
     }
 
-    public function enqueue_scripts()
-    {
-        wp_enqueue_script('custom-login', get_template_directory_uri() . '/assets/js/custom-login.js', ['jquery'], null, true);
-        wp_localize_script('custom-login', 'ajax_object', [
-            'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('send_sms_code_nonce'),
-        ]);
-    }
 
     public function render_login_form()
     {

@@ -50,7 +50,7 @@ $options = get_option('moves_options'); ?>
             </div>
 
         </div>
-        <div class="w-full wd:hidden mt-2 mb-5">
+        <div class="w-full md:hidden mt-2 mb-5">
             <a href="#"
                class="w-full flex justify-center border-2 rounded-[7px] px-[8px] py-[6px] border-bluet-700 text-bluet-400">مشاهده
                 بیشتر</a>
