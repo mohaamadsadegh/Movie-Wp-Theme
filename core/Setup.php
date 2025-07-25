@@ -24,6 +24,12 @@ class Setup
         register_nav_menu('main-menu' , 'منوی اصلی');
         add_theme_support('title-tag');
         add_theme_support('html5' , ['search-form' , 'gallery' , 'caption']);
+        add_action('init', function () {
+            if (!session_id()) {
+                session_start();
+            }
+        });
+
     }
 
     public function add_movie_thumbnail_column($columns)

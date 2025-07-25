@@ -1,6 +1,8 @@
 <?php
 namespace inc\user_panel;
 
+use Core\UserData;
+
 class login_form
 {
     public function __construct()
@@ -31,32 +33,32 @@ class login_form
 
         <!-- مودال ورود -->
         <div id="loginModal" class="modal hidden fixed inset-0 bg-black/80 items-center justify-center z-50 ">
-            <div class="bg-[#2c2b3b] p-6 rounded-lg max-w-md w-full relative shadow-lg border-b-yellow-yellow900 border-b">
+            <div class="bg-bluet-600 p-6 rounded-lg max-w-md w-full relative shadow-lg border-b-yellow-yellow900 border-b">
                 <button onclick="toggleModal('loginModal', false)" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
-                <h2 class="font-bold text-center mb-6">ورود به حساب کاربری</h2>
+                <h2 class="font-bold text-start my-5 title-sec">ورود به حساب کاربری</h2>
 
                 <form method="post" id="loginForm" class="space-y-4">
                     <input type="hidden" name="custom_login_nonce" value="<?php echo wp_create_nonce('custom_login'); ?>">
 
                     <div class="flex mb-4 justify-center">
-                        <label class="p-2 rounded-[10px] m-0"><input type="radio"  name="login_method" value="userpass" checked>ورود با ایمیل/نام کاربری</label>
-                        <label class="p-2 rounded-[10px] m-0"><input type="radio"  name="login_method" value="phonecode">ورود شماره موبایل</label>
+                        <label class="p-2 rounded-[3px] m-0 bg-yellow-500 text-black"><input type="radio"  name="login_method" value="userpass" checked>ورود با ایمیل/نام کاربری</label>
+                        <label class="p-2 rounded-[3px] m-0"><input type="radio"  name="login_method" value="phonecode">ورود شماره موبایل</label>
                     </div>
 
                     <div id="userpass_fields">
                         <label class="block text-sm mb-1">ایمیل یا نام کاربری</label>
-                        <input type="text" name="username_or_email" class="w-full border rounded px-3 py-2" required>
+                        <input type="text" name="username_or_email" class="w-full bg-bluet-700 rounded px-3 py-2" required>
                         <label class="block text-sm mt-4 mb-1">رمز عبور</label>
-                        <input type="password" name="password" class="w-full border rounded px-3 py-2" required>
+                        <input type="password" name="password" class="w-full bg-bluet-700 rounded px-3 py-2" required>
                     </div>
 
                     <div id="phonecode_fields" class="hidden">
                         <label class="block text-sm mb-1">شماره موبایل</label>
-                        <input type="text" id="login_phone" name="login_phone" class="w-full border rounded px-3 py-2" placeholder="09xxxxxxxxx">
-                        <button type="button" id="sendLoginSmsCode" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">ارسال کد پیامک</button>
+                        <input type="text" id="login_phone" name="login_phone" class="w-full bg-bluet-700 rounded px-3 py-2" placeholder="09xxxxxxxxx">
+                        <button type="button" id="sendLoginSmsCode" class="mt-2 px-4 py-2 bg-yellow-yellow900 text-white rounded hover:bg-yellow-400">ارسال کد پیامک</button>
                         <div id="loginSmsStatus" class="text-sm mt-1"></div>
                         <label class="block text-sm mt-4 mb-1">کد تایید</label>
-                        <input type="text" name="login_sms_code" maxlength="6" class="w-full border rounded px-3 py-2" placeholder="کد ۶ رقمی">
+                        <input type="text" name="login_sms_code" maxlength="6" class="w-full bg-bluet-700 rounded px-3 py-2" placeholder="کد ۶ رقمی">
                     </div>
 
                     <?php if (isset($_GET['login_error'])) : ?>
@@ -64,7 +66,8 @@ class login_form
                     <?php endif; ?>
 
                     <div>
-                        <button type="submit" name="custom_login_submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">ورود</button>
+                        <button type="submit" name="custom_login_submit" class="w-full bg-yellow-yellow900 text-white py-2 rounded hover:bg-yellow-400">ورود</button>
+<!--                        <div class="" >--><?php //UserData::get_user_register(); ?><!--</div>-->
                     </div>
                 </form>
 
@@ -74,28 +77,6 @@ class login_form
             </div>
         </div>
 
-        <!-- مودال بازیابی رمز عبور -->
-        <div id="resetModal" class="modal hidden fixed inset-0 bg-black/60 items-center justify-center z-50">
-            <div class="bg-[#2c2b3b] p-6 rounded-lg max-w-md w-full relative shadow-lg">
-                <button onclick="toggleModal('resetModal', false)" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
-                <h2 class="font-bold text-center mb-6">بازیابی رمز عبور</h2>
-                <form method="post" class="space-y-4">
-                    <input type="hidden" name="custom_reset_nonce" value="<?php echo wp_create_nonce('custom_reset'); ?>">
-                    <div>
-                        <label class="block text-sm mb-1">ایمیل ثبت‌شده</label>
-                        <input type="email" name="reset_email" required class="w-full border rounded px-3 py-2">
-                    </div>
-                    <?php if (isset($_GET['reset_error'])) : ?>
-                        <div class="text-red-600 text-sm">کاربری با این ایمیل یافت نشد.</div>
-                    <?php elseif (isset($_GET['reset_success'])) : ?>
-                        <div class="text-green-600 text-sm">لینک بازیابی ارسال شد.</div>
-                    <?php endif; ?>
-                    <div>
-                        <button type="submit" name="custom_reset_submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">ارسال لینک بازیابی</button>
-                    </div>
-                </form>
-            </div>
-        </div>
 
         <script>
             function toggleModal(id, show) {
@@ -124,7 +105,17 @@ class login_form
             jQuery(document).ready(function ($) {
                 // تغییر نمایش فیلدها بر اساس انتخاب روش ورود
                 $('input[name="login_method"]').change(function () {
-                    if ($(this).val() === 'phonecode') {
+                    const selected = $(this).val();
+
+                    // حذف کلاس از همه label ها
+                    $('input[name="login_method"]').each(function () {
+                        $(this).closest('label').removeClass('bg-yellow-500 text-black');
+                    });
+
+                    // اضافه کردن کلاس به فقط label مورد انتخاب‌شده
+                    $(this).closest('label').addClass('bg-yellow-500 text-black');
+
+                    if (selected === 'phonecode') {
                         $(this).removeClass('active');
                         $('#userpass_fields').hide(500);
                         $('#phonecode_fields').show(500);

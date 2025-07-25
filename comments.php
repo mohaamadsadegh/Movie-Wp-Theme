@@ -24,7 +24,7 @@
                 'title_reply'       => 'پاسخ',
                 'label_submit'      => 'ارسال',
                 'class_submit'      => 'bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-medium text-sm py-1 px-3 rounded-lg mt-3',
-                'comment_field'     => '<textarea name="comment" placeholder="دیدگاه خود را بنویسید..." class="w-full p-3 bg-bluet-600 rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" rows="3" required></textarea>',
+                'comment_field'     => '<textarea name="comment" placeholder="دیدگاه خود را بنویسید..." class="w-full mt-3 p-3 bg-bluet-600 rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" rows="3" required></textarea>',
                 'fields'            => [
                     'author' => '<input type="text" name="author" placeholder="نام" class="w-1/2 p-2 mt-2 rounded bg-gray-800 text-white text-sm" required>',
                     'email'  => '<input type="email" name="email" placeholder="ایمیل" class="w-1/2 p-2 mt-2 rounded bg-gray-800 text-white text-sm" required>',

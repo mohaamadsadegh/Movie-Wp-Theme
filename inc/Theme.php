@@ -3,11 +3,14 @@
 
 namespace inc;
 
-use inc\Ajax\AjaxHandler;
-use inc\Ajax\ajaxFilter;
-use inc\Ajax\AjaxComment;
 use core\Setup;
 use core\UserData;
+use inc\Ajax\AjaxComment;
+use inc\Ajax\ajaxFilter;
+use inc\Ajax\AjaxHandler;
+use inc\Ajax\RegisterAjax;
+use inc\Ajax\RegisterSendCode;
+use inc\Ajax\RegisterUser;
 use inc\metabox\actormeta;
 use inc\metabox\seriesmeta;
 use inc\metabox\VideoInfo;
@@ -29,10 +32,12 @@ class Theme
         new actormeta();
 //         ajax
 
-        add_action('init', function () {
+        add_action('init' , function () {
             new AjaxHandler();
         });
         new ajaxFilter();
+        new RegisterAjax();
+        new RegisterSendCode();
 //        user data
         new UserData();
 //        comments
@@ -42,7 +47,7 @@ class Theme
 //       ajax genre tabs
 //        new ajaxGenreTabs();
 //        login
-        add_action('after_setup_theme', function () {
+        add_action('after_setup_theme' , function () {
             new login_form();
         });
 //        config file

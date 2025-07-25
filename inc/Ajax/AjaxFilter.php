@@ -3,6 +3,7 @@
 namespace inc\Ajax;
 
 use core\MovieHelper;
+
 use WP_Query;
 
 class ajaxFilter

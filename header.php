@@ -56,7 +56,8 @@ $options = get_option('moves_options'); ?>
             <!-- Search -->
             <?php do_shortcode('[search-s]'); ?>
             <!--user-->
-            <?php UserData::user_login(); ?>
+           <div class=""><?php UserData::user_login();?></div>
+
         </div>
     </div>
 
