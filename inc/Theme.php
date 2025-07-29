@@ -5,6 +5,7 @@ namespace inc;
 
 use core\Setup;
 use core\UserData;
+use Inc\Ajax\AjaxAuthHandler;
 use inc\Ajax\AjaxComment;
 use inc\Ajax\ajaxFilter;
 use inc\Ajax\AjaxHandler;
@@ -36,8 +37,7 @@ class Theme
             new AjaxHandler();
         });
         new ajaxFilter();
-        new RegisterAjax();
-        new RegisterSendCode();
+        new AjaxAuthHandler();
 //        user data
         new UserData();
 //        comments
