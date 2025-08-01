@@ -196,23 +196,7 @@ $(document).ready(function () {
     });
 
 
-// سوئیچ تب‌ها
-    $('.tab-btn').click(function () {
-        $('.tab-btn').removeClass('border-white text-black').addClass('border-white text-gray-300');
-        $(this).removeClass('border-white text-white text-gray-300').addClass('border-white text-black');
-    });
 
-// انتخاب ژانر
-    $('.genre-item').click(function () {
-        $(this).toggleClass('bg-yellow-500 text-black').toggleClass('bg-[#2c2b3b] text-black');
-    });
-
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.add("hidden"));
-            document.querySelector(`#tab-${btn.dataset.tab}`).classList.remove("hidden");
-        });
-    });
 
 
 

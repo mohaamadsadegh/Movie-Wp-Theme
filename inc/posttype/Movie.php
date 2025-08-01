@@ -95,7 +95,7 @@ class Movie
             'rewrite' => ['slug' => 'anime'] ,
         ]);
 
-        $labels = [
+        $genre = [
             'name'              => 'ژانرها',
             'singular_name'     => 'ژانر',
             'search_items'      => 'جستجوی ژانرها',
@@ -110,7 +110,7 @@ class Movie
         ];
 
         register_taxonomy('genre', ['movie', 'series'], [
-            'labels' => $labels,
+            'labels' => $genre,
             'public' => true,
             'hierarchical' => false,
             'show_ui' => true,

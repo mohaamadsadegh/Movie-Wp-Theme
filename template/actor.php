@@ -24,7 +24,7 @@
                 <!-- Slide 1 -->
                 <div class="swiper-slide">
                     <div class="text-center overflow-hidden shadow-md">
-                        <img src="<?php echo IMG_URL . 'cart/car5.png' ?>" alt="Movie Poster"
+                        <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="Movie Poster"
                              class="w-full rounded-[10px] object-cover"/>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                 <!-- Slide 1 -->
                 <div class="swiper-slide">
                     <div class="text-center overflow-hidden shadow-md">
-                        <img src="<?php echo IMG_URL . 'cart/car5.png' ?>"  alt="Movie Poster"
+                        <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>"  alt="Movie Poster"
                              class="w-full rounded-[10px] object-cover"/>
                     </div>
                 </div>
