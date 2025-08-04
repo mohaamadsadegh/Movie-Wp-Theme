@@ -30,6 +30,6 @@ get_template_part('template/actor' , 'actor');
 get_template_part('template/listmove' , 'listmove');
 
 // blog
-get_template_part('template/blog' , 'blog');
+get_template_part('template/blog' , 'blog'  );
 
 get_footer();

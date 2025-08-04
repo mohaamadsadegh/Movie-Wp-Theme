@@ -163,15 +163,16 @@ $(document).ready(function () {
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
 // حذف active از بقیه
-            tabs.forEach(t => t.classList.remove("bg-bluet-700", "text-black"));
+            tabs.forEach(t => t.classList.remove("bg-bluet-700", "text-white"));
             contents.forEach(c => c.classList.add("hidden"));
 
 // فعال کردن انتخاب شده
-            tab.classList.add("bg-bluet-700", "text-black");
+            tab.classList.add("bg-bluet-700", "text-white");
             const selected = tab.getAttribute("data-tab");
             document.querySelector(`[data-content="${selected}"]`).classList.remove("hidden");
         });
     });
+
 // scroll to top
     $(".top-btn").click(function () {
         $("html, body").animate({scrollTop: 0}, "slow");

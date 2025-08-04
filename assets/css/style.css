@@ -55,6 +55,9 @@
     justify-content: center;
     align-items: center;
 }
+.image-hero .overlay{
+    text-align: start;
+}
 .overlay {
     position: absolute;
     bottom: 0;

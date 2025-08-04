@@ -7,16 +7,16 @@
         <aside class="md:w-1/4 bg-bluet-600 p-3 rounded-[10px]">
             <ul class="space-y-2">
                 <li>
-                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="profile">👤 پروفایل</button>
+                    <button class="tab-btn w-full text-right rounded-[5px] p-2" data-tab="profile">👤 پروفایل</button>
                 </li>
                 <li>
-                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="password">🔒 تغییر رمز</button>
+                    <button class="tab-btn w-full text-right rounded-[5px] p-2" data-tab="password">🔒 تغییر رمز</button>
                 </li>
                 <li>
-                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="avatar">🖼️ آواتار</button>
+                    <button class="tab-btn w-full text-right rounded-[5px] p-2" data-tab="avatar">🖼️ آواتار</button>
                 </li>
                 <li>
-                    <button class="tab-btn w-full text-right rounded-[5px]" data-tab="orders">🧾 سفارشات</button>
+                    <button class="tab-btn w-full text-right rounded-[5px] p-2" data-tab="orders">🧾 سفارشات</button>
                 </li>
 
                 <li><a href="<?php echo wp_logout_url(home_url()); ?>" class="text-red-600">🚪 خروج</a></li>

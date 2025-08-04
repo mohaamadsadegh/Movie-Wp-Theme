@@ -1,7 +1,7 @@
 <?php use core\MovieHelper;
 
 $options = get_option('moves_options'); ?>
-<!---->
+<!--فیلم های برتر-->
 <section class="container md:px-0 px-5 mb-[3]">
     <div class="swiper topMoviesSwiper">
         <div class="flex justify-between items-center mb-[24px]">
@@ -16,7 +16,7 @@ $options = get_option('moves_options'); ?>
         </div>
         <div class="swiper-wrapper">
             <?php
-            $topmoves = new WP_Query(['post_type' => 'movie' , 'posts_per_page' => 16 ,]);
+            $topmoves = new WP_Query(['post_type' => ['movie' , 'series' , 'anime'] , 'posts_per_page' => 16 ,]);
             if ($topmoves->have_posts()) : ?>
                 <?php while ($topmoves->have_posts()) : $topmoves->the_post(); ?>
                     <!-- Slide Item -->
